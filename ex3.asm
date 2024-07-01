@@ -91,9 +91,15 @@ end__traverse_HW1:
     movq %edx,%eax
     divl %ecx
     cmpl $3, %eax
-    jle is_rich_HW1
+    je is_maybe_rich_HW1
+    jl is_rich_HW1
+not_rich_HW1:
     movb $0, rich
     jmp end_HW1
+
+is_maybe_rich_HW1: # DOTO: CHECK IF NECCESARY 
+    cmp $0,%edx
+    jne not_rich_HW1
 is_rich_HW1:
     movb $1, rich
 end_HW1:

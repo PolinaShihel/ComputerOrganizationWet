@@ -1,0 +1,49 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "assemble",
+            "type": "shell",
+            "command": "sh",
+            "args": [
+                "-c",
+                "as -g ${fileDirname}/${fileBasenameNoExtension}.asm -o ${fileDirname}/${fileBasenameNoExtension}.o && sleep 0.5 && ld -o ${fileDirname}/${fileBasenameNoExtension} ${fileDirname}/${fileBasenameNoExtension}.o -lc -dynamic-linker /lib64/ld-linux-x86-64.so.2",
+            ],
+            "problemMatcher": [],
+            "detail": "Task to assemble assembly files."
+        },
+        {
+            "label": "sleep",
+            "type": "shell",
+            "command": "sleep",
+            "args": [
+                "1"
+            ],
+            "problemMatcher": [],
+            "detail": "Task to assemble assembly files."
+        },
+        {
+            "label": "link",
+            "type": "shell",
+            "command": "ld",
+            "args": [
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "${fileDirname}/${fileBasenameNoExtension}.o",
+                "-lc",
+                "-dynamic-linker",
+                "/lib64/ld-linux-x86-64.so.2"
+            ],
+            "problemMatcher": [],
+            "detail": "Task to link object files."
+        },
+        {
+            "label": "build",
+            "dependsOn": ["assemble"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

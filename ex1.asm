@@ -12,7 +12,7 @@
 	num:
 		.int 0
 	format_str_num: .asciz "num = %d\n"
-    	format_str_legal: .asciz "Legal = %d\n"
+    format_str_legal: .asciz "Legal = %d\n"
 
 .section .text
 _start:

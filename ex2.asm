@@ -74,10 +74,10 @@ check_if_divides_by_8_HW1:
 check_non_zero_quads_HW1:
 	cmpq %rcx, %rdi
 	jge divided_by_0_non_0_quads_HW1 # if current iteration >= number of quads
-	movq (%rsi,%rdi), %rax # load the currrent quad
+	movq (%rsi,%rdi,8), %rax # load the currrent quad
 	testq %rax, %rax # check if current quad is 0
 	jz else_HW1
-	addq $8, %rdi # increase the index by 8 bytes - quad
+	incq %rdi # increase the index by 1
 	jmp check_non_zero_quads_HW1
 divided_by_0_non_0_quads_HW1:
 	movq $3,type

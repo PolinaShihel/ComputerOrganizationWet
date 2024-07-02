@@ -1,0 +1,323 @@
+Running: ./run_test.sh ex1/ex1.asm ex1/ex1_test1
+timeout: the monitored command dumped core
+./run_test.sh: line 26: 25065 Segmentation fault      timeout 60s ./merged.out
+ex1/ex1.asm tested with ex1_test1: FAIL
+_____________________________________________________________
+
+Running: ./run_test.sh ex1/ex1.asm ex1/ex1_test2
+timeout: the monitored command dumped core
+./run_test.sh: line 26: 25075 Segmentation fault      timeout 60s ./merged.out
+ex1/ex1.asm tested with ex1_test2: FAIL
+_____________________________________________________________
+
+Running: ./run_test.sh ex1/ex1.asm ex1/ex1_test3
+num: 
+0
+Legal: 
+0
+ex1/ex1.asm tested with ex1_test3: PASS
+_____________________________________________________________
+
+Running: ./run_test.sh ex1/ex1.asm ex1/ex1_test4
+num: 
+0
+Legal: 
+0
+ex1/ex1.asm tested with ex1_test4: PASS
+_____________________________________________________________
+
+Running: ./run_test.sh ex1/ex1.asm ex1/ex1_test5
+num: 
+0
+Legal: 
+0
+ex1/ex1.asm tested with ex1_test5: PASS
+_____________________________________________________________
+
+Running: ./run_test.sh ex1/ex1.asm ex1/ex1_test6
+num: 
+0
+Legal: 
+0
+ex1/ex1.asm tested with ex1_test6: PASS
+_____________________________________________________________
+
+Running: ./run_test.sh ex2/ex2.asm ex2/ex2_test1
+ex2/ex2.asm: Assembler messages:
+ex2/ex2.asm:82: Error: no instruction mnemonic suffix given and no register operands; can't size instruction
+ex2/ex2.asm could not be created (as stage) with ex2_test1: FAIL
+rm: cannot remove 'merged.*': No such file or directory
+_____________________________________________________________
+
+Running: ./run_test.sh ex2/ex2.asm ex2/ex2_test2
+ex2/ex2.asm: Assembler messages:
+ex2/ex2.asm:82: Error: no instruction mnemonic suffix given and no register operands; can't size instruction
+ex2/ex2.asm could not be created (as stage) with ex2_test2: FAIL
+rm: cannot remove 'merged.*': No such file or directory
+_____________________________________________________________
+
+Running: ./run_test.sh ex2/ex2.asm ex2/ex2_test3
+ex2/ex2.asm: Assembler messages:
+ex2/ex2.asm:82: Error: no instruction mnemonic suffix given and no register operands; can't size instruction
+ex2/ex2.asm could not be created (as stage) with ex2_test3: FAIL
+rm: cannot remove 'merged.*': No such file or directory
+_____________________________________________________________
+
+Running: ./run_test.sh ex2/ex2.asm ex2/ex2_test4
+ex2/ex2.asm: Assembler messages:
+ex2/ex2.asm:82: Error: no instruction mnemonic suffix given and no register operands; can't size instruction
+ex2/ex2.asm could not be created (as stage) with ex2_test4: FAIL
+rm: cannot remove 'merged.*': No such file or directory
+_____________________________________________________________
+
+Running: ./run_test.sh ex2/ex2.asm ex2/ex2_test5
+ex2/ex2.asm: Assembler messages:
+ex2/ex2.asm:82: Error: no instruction mnemonic suffix given and no register operands; can't size instruction
+ex2/ex2.asm could not be created (as stage) with ex2_test5: FAIL
+rm: cannot remove 'merged.*': No such file or directory
+_____________________________________________________________
+
+Running: ./run_test.sh ex2/ex2.asm ex2/ex2_test6
+ex2/ex2.asm: Assembler messages:
+ex2/ex2.asm:82: Error: no instruction mnemonic suffix given and no register operands; can't size instruction
+ex2/ex2.asm could not be created (as stage) with ex2_test6: FAIL
+rm: cannot remove 'merged.*': No such file or directory
+_____________________________________________________________
+
+Running: ./run_test.sh ex2/ex2.asm ex2/ex2_test7
+ex2/ex2.asm: Assembler messages:
+ex2/ex2.asm:82: Error: no instruction mnemonic suffix given and no register operands; can't size instruction
+ex2/ex2.asm could not be created (as stage) with ex2_test7: FAIL
+rm: cannot remove 'merged.*': No such file or directory
+_____________________________________________________________
+
+Running: ./run_test.sh ex2/ex2.asm ex2/ex2_test8
+ex2/ex2.asm: Assembler messages:
+ex2/ex2.asm:82: Error: no instruction mnemonic suffix given and no register operands; can't size instruction
+ex2/ex2.asm could not be created (as stage) with ex2_test8: FAIL
+rm: cannot remove 'merged.*': No such file or directory
+_____________________________________________________________
+
+Running: ./run_test.sh ex2/ex2.asm ex2/ex2_test9
+ex2/ex2.asm: Assembler messages:
+ex2/ex2.asm:82: Error: no instruction mnemonic suffix given and no register operands; can't size instruction
+ex2/ex2.asm could not be created (as stage) with ex2_test9: FAIL
+rm: cannot remove 'merged.*': No such file or directory
+_____________________________________________________________
+
+Running: ./run_test.sh ex3/ex3.asm ex3/ex3_test1
+ex3/ex3.asm: Assembler messages:
+ex3/ex3.asm:91: Error: operand size mismatch for `movq'
+ex3/ex3.asm could not be created (as stage) with ex3_test1: FAIL
+rm: cannot remove 'merged.*': No such file or directory
+_____________________________________________________________
+
+Running: ./run_test.sh ex3/ex3.asm ex3/ex3_test2
+ex3/ex3.asm: Assembler messages:
+ex3/ex3.asm:91: Error: operand size mismatch for `movq'
+ex3/ex3.asm could not be created (as stage) with ex3_test2: FAIL
+rm: cannot remove 'merged.*': No such file or directory
+_____________________________________________________________
+
+Running: ./run_test.sh ex3/ex3.asm ex3/ex3_test3
+ex3/ex3.asm: Assembler messages:
+ex3/ex3.asm:91: Error: operand size mismatch for `movq'
+ex3/ex3.asm could not be created (as stage) with ex3_test3: FAIL
+rm: cannot remove 'merged.*': No such file or directory
+_____________________________________________________________
+
+Running: ./run_test.sh ex3/ex3.asm ex3/ex3_test4
+ex3/ex3.asm: Assembler messages:
+ex3/ex3.asm:91: Error: operand size mismatch for `movq'
+ex3/ex3.asm could not be created (as stage) with ex3_test4: FAIL
+rm: cannot remove 'merged.*': No such file or directory
+_____________________________________________________________
+
+Running: ./run_test.sh ex3/ex3.asm ex3/ex3_test5
+ex3/ex3.asm: Assembler messages:
+ex3/ex3.asm:91: Error: operand size mismatch for `movq'
+ex3/ex3.asm could not be created (as stage) with ex3_test5: FAIL
+rm: cannot remove 'merged.*': No such file or directory
+_____________________________________________________________
+
+Running: ./run_test.sh ex4/ex4.asm ex4/ex4_test1
+ex4/ex4.asm: Assembler messages:
+ex4/ex4.asm:28: Error: operand size mismatch for `movq'
+ex4/ex4.asm:39: Error: operand size mismatch for `movq'
+ex4/ex4.asm:61: Error: operand size mismatch for `movq'
+ex4/ex4.asm:72: Error: operand size mismatch for `movq'
+ex4/ex4.asm could not be created (as stage) with ex4_test1: FAIL
+rm: cannot remove 'merged.*': No such file or directory
+_____________________________________________________________
+
+Running: ./run_test.sh ex4/ex4.asm ex4/ex4_test2
+ex4/ex4.asm: Assembler messages:
+ex4/ex4.asm:28: Error: operand size mismatch for `movq'
+ex4/ex4.asm:39: Error: operand size mismatch for `movq'
+ex4/ex4.asm:61: Error: operand size mismatch for `movq'
+ex4/ex4.asm:72: Error: operand size mismatch for `movq'
+ex4/ex4.asm could not be created (as stage) with ex4_test2: FAIL
+rm: cannot remove 'merged.*': No such file or directory
+_____________________________________________________________
+
+Running: ./run_test.sh ex4/ex4.asm ex4/ex4_test3
+ex4/ex4.asm: Assembler messages:
+ex4/ex4.asm:28: Error: operand size mismatch for `movq'
+ex4/ex4.asm:39: Error: operand size mismatch for `movq'
+ex4/ex4.asm:61: Error: operand size mismatch for `movq'
+ex4/ex4.asm:72: Error: operand size mismatch for `movq'
+ex4/ex4.asm could not be created (as stage) with ex4_test3: FAIL
+rm: cannot remove 'merged.*': No such file or directory
+_____________________________________________________________
+
+Running: ./run_test.sh ex4/ex4.asm ex4/ex4_test4
+ex4/ex4.asm: Assembler messages:
+ex4/ex4.asm:28: Error: operand size mismatch for `movq'
+ex4/ex4.asm:39: Error: operand size mismatch for `movq'
+ex4/ex4.asm:61: Error: operand size mismatch for `movq'
+ex4/ex4.asm:72: Error: operand size mismatch for `movq'
+ex4/ex4.asm could not be created (as stage) with ex4_test4: FAIL
+rm: cannot remove 'merged.*': No such file or directory
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test1
+seconddegree=1
+ex5/ex5.asm tested with ex5_test1: PASS
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test10
+seconddegree=1
+ex5/ex5.asm tested with ex5_test10: PASS
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test11
+seconddegree=1
+ex5/ex5.asm tested with ex5_test11: PASS
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test12
+timeout: the monitored command dumped core
+./run_test.sh: line 26: 25272 Floating point exceptiontimeout 60s ./merged.out
+ex5/ex5.asm tested with ex5_test12: FAIL
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test13
+timeout: the monitored command dumped core
+./run_test.sh: line 26: 25282 Floating point exceptiontimeout 60s ./merged.out
+ex5/ex5.asm tested with ex5_test13: FAIL
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test14
+seconddegree=0
+ex5/ex5.asm tested with ex5_test14: PASS
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test15
+seconddegree=0
+ex5/ex5.asm tested with ex5_test15: PASS
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test16
+timeout: the monitored command dumped core
+./run_test.sh: line 26: 25310 Floating point exceptiontimeout 60s ./merged.out
+ex5/ex5.asm tested with ex5_test16: FAIL
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test17
+seconddegree=0
+ex5/ex5.asm tested with ex5_test17: PASS
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test18
+timeout: the monitored command dumped core
+./run_test.sh: line 26: 25329 Floating point exceptiontimeout 60s ./merged.out
+ex5/ex5.asm tested with ex5_test18: FAIL
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test19
+timeout: the monitored command dumped core
+./run_test.sh: line 26: 25339 Floating point exceptiontimeout 60s ./merged.out
+ex5/ex5.asm tested with ex5_test19: FAIL
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test2
+seconddegree=1
+ex5/ex5.asm tested with ex5_test2: PASS
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test20
+timeout: the monitored command dumped core
+./run_test.sh: line 26: 25358 Floating point exceptiontimeout 60s ./merged.out
+ex5/ex5.asm tested with ex5_test20: FAIL
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test21
+timeout: the monitored command dumped core
+./run_test.sh: line 26: 25368 Floating point exceptiontimeout 60s ./merged.out
+ex5/ex5.asm tested with ex5_test21: FAIL
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test22
+seconddegree=0
+ex5/ex5.asm tested with ex5_test22: PASS
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test23
+timeout: the monitored command dumped core
+./run_test.sh: line 26: 25387 Floating point exceptiontimeout 60s ./merged.out
+ex5/ex5.asm tested with ex5_test23: FAIL
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test24
+seconddegree=1
+ex5/ex5.asm tested with ex5_test24: PASS
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test25
+seconddegree=1
+ex5/ex5.asm tested with ex5_test25: PASS
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test26
+timeout: the monitored command dumped core
+./run_test.sh: line 26: 25415 Floating point exceptiontimeout 60s ./merged.out
+ex5/ex5.asm tested with ex5_test26: FAIL
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test3
+seconddegree=1
+ex5/ex5.asm tested with ex5_test3: PASS
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test4
+seconddegree=1
+ex5/ex5.asm tested with ex5_test4: PASS
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test5
+seconddegree=0
+ex5/ex5.asm tested with ex5_test5: PASS
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test6
+timeout: the monitored command dumped core
+./run_test.sh: line 26: 25452 Floating point exceptiontimeout 60s ./merged.out
+ex5/ex5.asm tested with ex5_test6: FAIL
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test7
+seconddegree=0
+ex5/ex5.asm tested with ex5_test7: PASS
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test8
+timeout: the monitored command dumped core
+./run_test.sh: line 26: 25471 Floating point exceptiontimeout 60s ./merged.out
+ex5/ex5.asm tested with ex5_test8: FAIL
+_____________________________________________________________
+
+Running: ./run_test.sh ex5/ex5.asm ex5/ex5_test9
+seconddegree=1
+ex5/ex5.asm tested with ex5_test9: PASS
+_____________________________________________________________
+

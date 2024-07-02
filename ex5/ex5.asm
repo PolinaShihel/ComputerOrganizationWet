@@ -1,6 +1,7 @@
-.global _start 
+.global _start
 
 .section .text
+
 _start:
 
     movl size, %ecx # ecx = size of array
@@ -28,7 +29,9 @@ _start:
     # calculate the quotient for geometric sequence
     movl %r12d, %eax
     xorl %edx, %edx
-    idivl %r11d
+    testl %r11d,%r11d
+    jz check_differences_only_arithmetic_sequence_HW1
+    divl %r11d
     movl %eax, %esp # esp = will hold the quotient for geometric sequence of differences 
 
 check_differences_sequence_HW1:
@@ -48,9 +51,11 @@ check_differences_sequence_HW1:
     # calculate for geometric sequence
     movl %r15d, %eax 
     xorl %edx, %edx
-    idivl %r12d
+    testl %r12d,%r12d
+    jz check_differences_arithmetic_sequence_HW1
+    divl %r12d
     cmpl %eax, %esp
-    jne check_differences_arithmetic_sequence_HW1
+    jne check_differences_only_arithmetic_sequence_HW1
 
 
     movl %r14d, %r10d # current will be prev next iteration 
@@ -62,7 +67,9 @@ check_differences_geometric_sequence_HW1:
     # calculate for geometric sequence
     movl %r15d, %eax 
     xorl %edx, %edx
-    idivl %r12d
+    testl %r12d, %r12d
+    jz check_quotients_sequence_HW1
+    divl %r12d
     cmpl %eax, %esp
     jne check_quotients_sequence_HW1
 
@@ -79,6 +86,20 @@ check_differences_geometric_sequence_HW1:
     movl %r11d, %r15d # backup the current difference
     jmp check_differences_geometric_sequence_HW1
 
+# if we jumped to this lable we have no geometric sequence due to a dividor being 0
+check_differences_only_arithmetic_sequence_HW1:
+    cmpl %esi, %ecx
+    je is_seconddegree_HW1
+    movl (%rbx,%rsi,4),%r11d # r11d = next var
+
+    # calculate for Arithmetic sequence
+    movl %r11d, %r14d # backup the current var 
+    subl %r10d, %r11d # r11d = current - prev
+    movl %r11d, %r15d # backup the current difference
+    subl %r12d, %r11d # curr difference = curr difference - prev difference  
+    cmpl %r11d, %ebp # check if the the difference is the same  
+    jne check_quotients_sequence_HW1
+    incl %esi
 check_differences_arithmetic_sequence_HW1:
     # backup for next iteration 
     movl %r14d, %r10d # current will be prev next iteration 
@@ -95,6 +116,7 @@ check_differences_arithmetic_sequence_HW1:
     subl %r12d, %r11d # curr difference = curr difference - prev difference  
     cmpl %r11d, %ebp # check if the the difference is the same  
     jne check_quotients_sequence_HW1
+    incl %esi
     jmp check_differences_arithmetic_sequence_HW1
 
 check_quotients_sequence_HW1:
@@ -109,11 +131,15 @@ check_quotients_sequence_HW1:
     # caclculate quotient between the first two pairs 
     movl %r9d, %eax 
     xorl %edx, %edx
-    idivl %r8d # eax = r9d / r8d
+    testl %r8d,%r8d
+    jz is_not_seconddegree_HW1
+    divl %r8d # eax = r9d / r8d
     movl %eax, %r11d # r11d = r9d / r8d
     movl %r10d, %eax 
     xorl %edx, %edx
-    idivl %r9d # eax = r10d / r9d
+    testl %r9d,%r9d
+    jz is_not_seconddegree_HW1
+    divl %r9d # eax = r10d / r9d
     movl %eax, %r12d # r12d = r10d / r9d
 
     # calculate differences (arithmetic sequence) of quotient pairs
@@ -123,9 +149,10 @@ check_quotients_sequence_HW1:
 
     # calculate quotient (geometric sequence) of quotient pairs 
     xorl %edx, %edx
-    idivl %r11d # eax = r12d / r11d
+    testl %r11d,%r11d
+    jz check_quotient_only_arithmetic_sequence_HW1
+    divl %r11d # eax = r12d / r11d
     movl %eax, %esp # esp holds quotient for geometric sequence
-
     movl %r8d, %r12d # r12d = r10d / r9d, r10d = curr last 
 
 check_quotients_sequence_loop_HW1:
@@ -136,7 +163,9 @@ check_quotients_sequence_loop_HW1:
     # calculate for Arithmetic sequence
     movl %r11d, %eax 
     xorl %edx, %edx
-    idivl %r10d # eax = current / prev
+    testl %r10d,%r10d
+    jz is_not_seconddegree_HW1
+    divl %r10d # eax = current / prev
     movl %eax, %r15d # backup new quotient
 
     subl %r12d, %eax # curr difference = curr quotient - prev quotient  
@@ -147,11 +176,11 @@ check_quotients_sequence_loop_HW1:
     # calculate for geometric sequence
     movl %r15d, %eax 
     xorl %edx, %edx
-    idivl %r12d # eax is new quotient of quotients, new quotient / last quotient
+    testl %r12d,%r12d
+    jz check_quotient_arithmetic_sequence_HW1
+    divl %r12d # eax is new quotient of quotients, new quotient / last quotient
     cmpl %eax, %esp # eax is new quotient of quotients 
     jne check_quotient_arithmetic_sequence_HW1
-
-
     movl %r11d, %r10d # current will be prev next iteration 
     movl %r15d, %r12d # current quotient will be prev quotient next iteration
     jmp check_quotients_sequence_loop_HW1
@@ -160,7 +189,9 @@ check_quotient_geometric_sequence_HW1:
     # calculate for geometric sequence
     movl %r15d, %eax 
     xorl %edx, %edx
-    idivl %r12d
+    testl %r12d,%r12d
+    jz is_not_seconddegree_HW1
+    divl %r12d
     cmpl %eax, %esp
     jne is_not_seconddegree_HW1
 
@@ -174,9 +205,30 @@ check_quotient_geometric_sequence_HW1:
     movl (%rbx,%rsi,4),%r11d # r11d = next var
     movl %r11d, %eax 
     xorl %edx, %edx
-    idivl %r10d # eax = current / prev
+    testl %r10d,%r10d
+    jz is_not_seconddegree_HW1
+    divl %r10d # eax = current / prev
     movl %eax, %r15d # backup new quotient
     jmp check_quotient_geometric_sequence_HW1
+check_quotient_only_arithmetic_sequence_HW1:
+    movl %r8d, %r12d # r12d = r10d / r9d, r10d = curr last 
+    cmpl %esi, %ecx
+    je is_seconddegree_HW1
+    movl (%rbx,%rsi,4),%r11d # r11d = next var
+
+    # calculate for Arithmetic sequence
+    movl %r11d, %eax 
+    xorl %edx, %edx
+    testl %r10d,%r10d
+    jz is_not_seconddegree_HW1
+    divl %r10d # eax = current / prev
+    movl %eax, %r15d # backup new quotient
+
+    subl %r12d, %eax # curr difference = curr quotient - prev quotient  
+    cmpl %eax, %ebp # check if the the difference is the same  
+    jne is_not_seconddegree_HW1
+
+    incl %esi
 
 check_quotient_arithmetic_sequence_HW1:
     # backup for next iteration 
@@ -190,12 +242,15 @@ check_quotient_arithmetic_sequence_HW1:
     # calculate for Arithmetic sequence
     movl %r11d, %eax 
     xorl %edx, %edx
-    idivl %r10d # eax = current / prev
+    testl %r10d,%r10d
+    jz is_not_seconddegree_HW1
+    divl %r10d # eax = current / prev
     movl %eax, %r15d # backup new quotient
 
     subl %r12d, %eax # curr difference = curr quotient - prev quotient  
     cmpl %eax, %ebp # check if the the difference is the same  
     jne is_not_seconddegree_HW1
+    incl %esi
     jmp check_differences_arithmetic_sequence_HW1
 
 is_not_seconddegree_HW1:

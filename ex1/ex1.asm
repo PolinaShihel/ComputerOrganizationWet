@@ -1,6 +1,5 @@
 .global _start
 
-.section .text
 _start:
 	movl length, %ecx 
 	# no use in checking if length is 0 because even if it is the index is bigger or 0 and will go to not_legal_HW1
@@ -11,7 +10,7 @@ _start:
 	leaq Adress,%rsi
 	movl (%rsi,%rdi,4), %eax
 	movl %eax,num
-	jmp end
+	jmp end_HW1
 not_legal_HW1:
 	movl $0, Legal
 end_HW1:

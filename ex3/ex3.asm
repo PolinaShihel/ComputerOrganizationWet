@@ -2,7 +2,7 @@
 
 .section .text
 _start:
-    movl $1, %edx # edx = counter of nodes
+    movl $1, %edx # %edx = counter of nodes
     movl $0, %ecx # ecx = counter of leaves 
     xorq %r8,%r8 # initiating index of first level
     xorq %r9,%r9 # initiating index of second level
@@ -20,7 +20,7 @@ first_level_HW1:
     incl %ecx
     jmp end__traverse_HW1
 not_last_first_HW1:
-    incl edx
+    incl %edx
     incq %r8
     xorq %r9,%r9 # index of loop 
 
@@ -34,7 +34,7 @@ second_level_HW1:
     incl %ecx
     jmp first_level_HW1
 not_last_second_HW1:
-    incl edx
+    incl %edx
     incq %r9
     xorq %r10,%r10 # index of loop 
 
@@ -47,7 +47,7 @@ third_level_HW1:
     incl %ecx
     jmp second_level_HW1
 not_last_third_HW1:
-    incl edx
+    incl %edx
     incq %r10
     xorq %r11,%r11 # index of loop 
 
@@ -60,7 +60,7 @@ forth_level_HW1:
     incl %ecx
     jmp third_level_HW1
 not_last_forth_HW1:
-    incl edx
+    incl %edx
     incq %r11
     xorq %r12,%r12 # index of loop 
 fifth_level_HW1:
@@ -72,7 +72,7 @@ fifth_level_HW1:
     incl %ecx
     jmp forth_level_HW1
 not_last_fifth_HW1:
-    incl edx
+    incl %edx
     incq %r12
     xorq %r13,%r13 # index of loop 
 sixth_level_HW1:
@@ -84,11 +84,11 @@ sixth_level_HW1:
     incl %ecx 
     jmp fifth_level_HW1
 not_last_sixth_HW1:
-    incl edx
+    incl %edx
     incq %r13
     jmp sixth_level_HW1
 end__traverse_HW1:
-    movq %edx,%eax
+    movl %edx,%eax
     xorl %edx, %edx
     divl %ecx
     cmpl $3, %eax

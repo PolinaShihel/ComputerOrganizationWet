@@ -77,10 +77,10 @@ check_non_zero_quads_HW1:
 	jmp check_non_zero_quads_HW1
 divided_by_0_non_0_quads_HW1:
 	movq $3,type
-	jmp end
+	jmp end_HW1
 else_HW1:
-	mov $4,type
-end:
+	movq $4,type
+end_HW1:
 	
 # Print "type="
     movq $1, %rax            # syscall number for sys_write

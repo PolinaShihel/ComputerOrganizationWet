@@ -8,10 +8,15 @@ as "$YOUR_ASM" "$TEST" -o merged.o
 if [ -f "merged.o" ]; then
 	ld merged.o -o merged.out
 	if [ -f "merged.out" ]; then
-		timeout 60s ./merged.out	
+		timeout 60s ./merged.out | tee tempOutput.txt
 		if [ $? -eq 0 ]; then
-			echo "${YOUR_ASM} tested with ${TEST_NAME}: PASS"
+			if cmp -s "$TEST.out" "tempOutput.txt"; then
+    			echo "${YOUR_ASM} tested with ${TEST_NAME}: PASS"
+			else
+    			echo "${YOUR_ASM} tested with ${TEST_NAME}: FAIL"
+			# echo "${YOUR_ASM} tested with ${TEST_NAME}: PASS"
 			STATUS=0
+			fi
 		else
 			echo "${YOUR_ASM} tested with ${TEST_NAME}: FAIL"
 			STATUS=1
@@ -26,4 +31,5 @@ else
 fi
 
 rm merged.*
+rm tempOutput.txt
 exit ${STATUS}

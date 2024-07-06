@@ -1,0 +1,28 @@
+.global _start
+
+.section .text
+  mov $Legal, %rax
+  cmpl $0, (%rax)
+  jne bad_exit
+  
+  movq $60, %rax
+  movq $0, %rdi
+  syscall
+
+bad_exit:
+  movq $60, %rax
+  movq $1, %rdi
+  syscall
+
+.section .data
+
+Adress:
+    .quad 0
+Index:
+    .quad 0
+length:
+    .quad 1
+Legal:
+    .quad 0
+num:
+    .quad 0

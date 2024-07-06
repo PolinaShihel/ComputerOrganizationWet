@@ -1,14 +1,4 @@
 .global _start
-
-.section .data
-series: .int 1, -2, 4, -8, 16, -32, 64, -128, 256
-
-size: .int 9
-
-seconddegree: .byte 0
-
-.section .text
-
 _start:
 
     movl size, %ecx # ecx = size of array
@@ -95,6 +85,8 @@ check_differences_geometric_sequence_HW1:
 
 # if we jumped to this lable we have no geometric sequence due to a dividor being 0
 check_differences_only_arithmetic_sequence_HW1:
+    movl %r14d, %r10d # current will be prev next iteration 
+    movl %r15d, %r12d # current difference will be prev difference next iteration
     cmpl %esi, %ecx
     je is_seconddegree_HW1
     movl (%rbx,%rsi,4),%r11d # r11d = next var

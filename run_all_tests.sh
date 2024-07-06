@@ -8,16 +8,16 @@ script_path="./run_test.sh"
 
 # Loop through each exi directory
 for i in {1..5}; do
-  ex_dir="ex${i}"
+  ex_dir="ex${i}_tests"
 
   # Check if the directory exists
   if [[ -d $ex_dir ]]; then
-    asm_file="${ex_dir}/ex${i}.asm"
+    asm_file="./ex${i}.asm"
 
     # Find test files matching the pattern exi_testj
     for test_file in $(ls ${ex_dir}/ex${i}_test* | grep -P "^${ex_dir}/ex${i}_test\d+$"); do
       echo "Running: $script_path $asm_file $test_file" | tee -a $output_file
-      $script_path $asm_file $test_file >> $output_file 2>&1
+      $script_path $asm_file $test_file | tee -a $output_file
       echo -e "_____________________________________________________________\n" >> $output_file  # Add a line of underscores between tests
     done
   fi

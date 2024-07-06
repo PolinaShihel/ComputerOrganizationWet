@@ -1,0 +1,64 @@
+.global _start
+
+.section .text
+  mov $rich, %rax
+  cmpl $0, (%rax)
+  jne bad_exit
+  
+  movq $60, %rax
+  movq $0, %rdi
+  syscall
+
+bad_exit:
+  movq $60, %rax
+  movq $1, %rdi
+  syscall
+
+.section .data
+root:
+    .quad a, b, c, d, 0
+a:
+    .quad e, 0
+b:
+    .quad f, 0
+c:
+    .quad g, 0
+d:
+    .quad h, 0
+e:
+    .quad i, 0
+f:
+    .quad j, 0
+g:
+    .quad k, 0
+h:
+    .quad l, 0
+i:
+    .quad m, n, 0
+j:
+    .quad o, 0
+k:
+    .quad p, 0
+l:
+    .quad q, 0
+m:
+    .quad 0
+n:
+    .quad s, 0
+o:
+    .quad t, 0
+p:
+    .quad u, v, 0
+q:
+    .quad 0
+s:
+    .quad 0
+t:
+    .quad 0
+u:
+    .quad 0
+v:
+    .quad 0
+rich:
+    .byte 0
+

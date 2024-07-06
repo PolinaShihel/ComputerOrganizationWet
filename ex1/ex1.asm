@@ -8,7 +8,8 @@ _start:
 	jae not_legal_HW1 #if length<=index (index starts from 0)
 	movl $1, Legal
 	leaq Adress,%rsi
-	movl (%rsi,%rdi,4), %eax
+	movq (%rsi), %rsp
+	movl (%rsp,%rdi,4), %eax
 	movl %eax,num
 	jmp end_HW1
 not_legal_HW1:
